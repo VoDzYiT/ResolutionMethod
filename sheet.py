@@ -1,4 +1,4 @@
-from Main import *
+from logic import *
 
 
 rain = Literal('Rain')
@@ -58,3 +58,12 @@ formula4 = Or(And(
 ))
 resolve4 = Resolution(formula4)
 print(resolve4.resolve())
+
+a = Literal("a")
+b = Literal("b")
+expr = And(a, Or(a, b))
+expr2 = Or(a, And(a, b))
+expected = [[a, b], [Not(a), b]]
+result = to_cnf(expr)
+print(to_cnf(Or(And(a, b), And(a, b))))
+print(to_cnf(Or(And(a, b), a)))
