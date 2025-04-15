@@ -46,9 +46,7 @@ class And:
 
     def __iter__(self):
         for arg in self.args:
-
             yield arg
-
 
 
 class Or:
@@ -64,3 +62,12 @@ class Or:
                 yield from arg
             else:
                 yield arg
+
+
+class Implication:
+    def __init__(self, left, right):
+        self.left = left
+        self.right = right
+
+    def __str__(self):
+        return f"{self.left} → {self.right}"

@@ -43,6 +43,17 @@ class Resolution:
 
                             break
 
+                        if len(clause1) == 1 and len(clause2) != 1:
+                            cnf_set.pop(i)
+                            clause2.remove(lit2)
+                            changed = True
+                            break
+                        if len(clause2) == 1 and len(clause1) != 1:
+                            cnf_set.pop(j)
+                            clause1.remove(lit1)
+                            changed = True
+                            break
+
                         clause1.remove(lit1)
                         clause2.remove(lit2)
 

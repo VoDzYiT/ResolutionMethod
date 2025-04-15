@@ -1,4 +1,4 @@
-from .expressions import Or, Not, And
+from .expressions import Or, Not, And, Implication
 
 def to_cnf(expr):
     """
@@ -27,10 +27,15 @@ def to_cnf(expr):
         for arg in expr.args:
             if isinstance(arg, Or):
                 new_args.extend(arg.args)
+            elif isinstance(arg, Implication):
+                new_args.append(to_cnf(Or(Not(arg.left), arg.right)))
             else:
                 new_args.append(arg)
 
         return Or(*new_args)
+    if isinstance(expr, Implication):
+        # A → B = ¬A ∨ B
+        return to_cnf(Or(Not(expr.left), expr.right))
 
     # If it's just a literal, return it
     else:
