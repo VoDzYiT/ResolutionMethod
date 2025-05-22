@@ -1,5 +1,5 @@
 import unittest
-from logic import *
+from src.logic import *
 
 
 class TestResolutionMethod(unittest.TestCase):
