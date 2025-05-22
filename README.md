@@ -2,14 +2,24 @@
 A Python implementation of the basic principle of resolution - building a logical conclusion through contradiction. It is limited only to checking direct contradictions between disjuncts
 
 ---
+### How to Use
+After installing the project you can use the `resolution-cli` command directly from your terminal.
 
+You can also import and use the logic components directly in your Python scripts.
+
+---
 ### Project structure
-- `logic/` — contains the implementation of logical operations and the resolution method
-  - `expressions/` — classes for representing logical expressions (e.g., `Literal`, `And`, `Or`, `Not`, `Implication`)
-  - `resolution/` — core logic for applying the resolution method
-  - `transformations/` — different functions
-- `tests/` — unit tests for validating the logic operations and resolution process
-- `main.py` — example script demonstrating how to use the resolution algorithm
+- `src` - Contains the source code of the project
+  - `logic/` — contains the implementation of logical operations and the resolution method
+    - `expressions/` — classes for representing logical expressions (e.g., `Literal`, `And`, `Or`, `Not`, `Implication`)
+    - `resolution/` — core logic for applying the resolution method
+    - `transformations/` — different functions
+  - `tests/` — unit tests for validating the logic operations and resolution process
+  - `main.py` — example script demonstrating how to use the resolution algorithm
+  - `cli` - contains the command-line interface
+    - `cli_app` - the main script for the CLI application.
+- `test` -  Unit tests
+- `pyproject.toml` - Project metadata and build configuration
 
 ---
 
