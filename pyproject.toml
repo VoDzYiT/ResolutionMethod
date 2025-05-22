@@ -1,0 +1,13 @@
+[project]
+name = "resolution-logic"
+version = "0.1.0"
+description = "A Python implementation of the basic principle of resolution."
+authors = [{ name = "VoDzYiT"}]
+readme = "README.md"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+packages = ["cli", "logic"]
+
+[project.scripts]
+resolution-cli = "cli.cli_app:run_cli_app"
